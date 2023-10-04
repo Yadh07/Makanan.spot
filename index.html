@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makanan.spot - A place for your cravings!</title>
+    <style>
+        body {
+            margin: 0px;
+            box-sizing: content-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgb(238, 235, 235);
+        }
+        /* HEADER */
+        .header {
+            overflow: hidden;
+            display: block;
+        }
+        .header > .logo {
+            float: left;
+            width: 25%;
+        }
+        .header > .logo > img {
+            padding: 10px;
+        }
+        .header > .info {
+            padding: 35px;
+            float: right;
+            overflow: hidden;
+            width: 70%;
+        }
+        .header > .info > div {
+            padding: 10px;
+            float: right;
+            text-align: center;
+        }
+        .header > .info > div > img {
+            margin-right: 5px;
+            width: 20px;
+        }
+        /* MENU */
+        .menu {
+            overflow: hidden;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            background-color: black;
+        }
+        .menu > a {
+            float: left;
+            width: 22%;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .menu > a > img {
+            width: 20px;
+            margin: 0px;
+        }
+        .menu > a:hover {
+            background-color: black;
+            color: white;
+            filter: invert(1);
+        }
+        /* CONTENT */
+        .content {
+            overflow: hidden;
+            display: block;
+        }
+        .content > h1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+        .content > .bg-content {
+            float: left;
+            margin: 20px;
+            background-color: white;
+            border-radius: 10px 10px 10px 10px;
+        }
+        .content > .bg-content > .story1 , .story2 {
+            margin: 10px;
+            float: left;
+            width: 98%;
+            overflow: hidden;
+        }
+        .content > .bg-content > .story1 {
+            border-bottom: double;
+            padding: 10px 10px;
+        }
+        .content > .bg-content > .story1 > img {
+            float: right;
+            width: 20%;
+            border-radius: 20px 20px 20px 20px;
+            text-align: center;
+        }
+        .content > .bg-content > .story1 > font {
+            float: left;
+            width: 70%;
+            font-size: 18px;
+        }
+        .content > .bg-content > .story2 > img {
+            float: left;
+            width: 20%;
+            border-radius: 10px 10px 10px 10px;
+            text-align: center;
+        }
+        .content > .bg-content > .story2 > h2 , font {
+            float: right;
+            width: 70%;
+        }
+        .content > .bg-content > .story2 > font {
+            font-size: 18px;
+        }
+        /* CONTENT-2 */
+        .content-2 {
+            overflow: hidden;
+            display: block;
+        }
+        .content-2 > .title-c2 {
+            overflow: hidden;
+            padding: 30px;
+        }
+        .content-2 > .title-c2 > img {
+            width: 55px;
+        }
+        .content-2 > .title-c2 > h1 {
+            float: left;
+        }
+        .content-2 > .searches {
+            float: left;
+            overflow: hidden;
+        }
+        .content-2 > .searches > a {
+            float: left;
+            padding: 30px;
+            text-decoration: none;
+            overflow: hidden;
+            width: 14%;
+        }
+        .content-2 > .searches > a > img {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px 20px 20px 20px;
+            border: solid;
+            border-color: black;
+        }
+        .content-2 > .searches > a > font {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            margin-right: 40px;
+        }
+        .content-2 > .searches > a > .rating {
+            float: left;
+            font-size: 30px;
+            margin-left: 30px;
+            color: gold;
+        }
+        .content-2 > .searches > .button {
+            float: left;
+            margin-top: 100px;
+        }
+        .content-2 > .searches > .button > a > input {
+            float: left;
+            padding: 25px;
+            border-radius: 40px 40px 40px 40px;
+            background-color: orangered;
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+        }
+        .content-2 > .searches > .button > a > input:hover {
+            background-color: rgb(78, 21, 1);
+        }
+        /* FOOTER */
+        .footer {
+            overflow: hidden;
+            display: block;
+            background-color: black;
+            color: white;
+        }
+        .footer > .icon-footer {
+            float: left;
+            margin-bottom: 10px;
+        }
+        .footer > .icon-footer > h3 {
+            padding-left: 20px;
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+        .footer > .icon-footer > a {
+            text-decoration: none;
+            padding: 20px;
+            color: white;
+        }
+        .footer > .icon-footer > a > img {
+            width: 20px;
+            margin-right: 5px;
+        }
+        .footer > .icon-footer > a:hover {
+            text-decoration: underline;
+        }
+        .footer > .text {
+            float: right;
+            padding: 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">
+            <img src="Images/Let_s_get_in_touch___1_-removebg-preview.png" alt="">
+        </div>
+        <div class="info">
+            <div class="hq">
+                <img src="Images/location.png" alt="">
+                Our HQ
+            </div>
+            <div class="email">
+                <img src="Images/email (1).png" alt="">
+                makanan.spot@business.com
+            </div>
+            <div class="phone">
+                <img src="Images/phone-call.png" alt="">
+                07-4112510 (HQ)
+            </div>
+        </div>
+    </div>
+    <!-- MENU -->
+    <div class="menu">
+        <a href="" class="home" onclick="clicked()">
+            <img src="Images/home_1946436.png" alt="">&emsp;Home
+        </a>
+        <a href="" class="take-away">
+            <img src="Images/take-away_6406675.png" alt="">&emsp;Take-away
+        </a>
+        <a href="" class="recipe">
+            <img src="Images/book_1764375.png" alt="">&emsp;Recipes
+        </a>
+        <a href="" class="support">
+            <img src="Images/support_3249904.png" alt="">&emsp;24/7 Customer Service
+        </a>
+    </div>
+    <!-- CONTENT -->
+    <div class="content">
+        <h1>LATEST BRIEF INFORMATION</h1>
+        <div class="bg-content">
+            <div class="story1">
+                <img src="Images/curry.jpeg" alt="">
+                <h2>Chicken Curry</h2>
+                <font>Chicken curry is a dish originating from India. It is common in the Indian subcontinent, Southeast Asia, Great Britain, Caribbean, and Japan. A typical curry from the Indian subcontinent consists of chicken stewed in an onion- and tomato-based sauce, flavoured with ginger, garlic, tomato puree, chilli peppers and a variety of spices, often including turmeric, cumin, coriander, cinnamon, and cardamom. Outside of South Asia, chicken curry is often made with a pre-made spice mixture known as curry powder.</font>
+            </div>
+            <div class="story2">
+                <img src="Images/nasi_lemak.jpeg" alt="">
+                <h2>Nasi Lemak</h2>
+                <font>Nasi lemak is a dish originating in Malay cuisine that consists of fragrant rice cooked in coconut milk and pandan leaf. It is commonly found in Malaysia, where it is considered as the national dish. It is also a native dish in neighbouring areas with significant ethnic Malay populations such as Singapore and Southern Thailand. In Indonesia it can be found in several parts of Sumatra, especially the Malay regions of Riau, Riau Islands and Medan. It is considered an essential dish for a typical Malay-style breakfast. Nasi lemak is featured as a national dish in most of the country's tourism brochures and promotional materials.</font>
+            </div>
+        </div>
+    </div>
+    <!-- CONTENT-2 -->
+    <div class="content-2">
+        <div class="title-c2">
+            <h1>TRENDING SEARCHES</h1>&emsp;<img src="Images/line-chart.png" alt="">
+        </div>
+        <div class="searches">
+            <a href="" class="rendang">
+                <img src="Images/rendang.jpeg" alt=""><br>
+                <font>Rendang</font><br>
+            </a>
+            <a href="" class="nasi-dagang">
+                <img src="Images/nasi-dagang.jpeg" alt=""><br>
+                <font>Nasi Dagang</font>
+            </a>
+            <a href="" class="sate-ayam" style="overflow: hidden;">
+                <img src="Images/sate.jpeg" alt="">
+                <font style="float: left;">Sate Ayam</font>
+            </a>
+            <a href="" class="roti-canai">
+                <img src="Images/roti-canai.jpeg" alt="">
+                <font style="float: left;">Roti Canai</font>
+            </a>
+            <a href="" class="kuey-tiaw">
+                <img src="Images/kuey-tiaw.jpeg" alt="">
+                <font style="float: left;">Kuey Tiao</font>
+            </a>
+            <div class="button">
+                <a href="index.html">
+                    <input type="submit" value=">">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="icon-footer">
+            <h3>Check out our social medias too!</h3>
+            <a href="">
+                <img src="Images/instagram.png" alt="">Instagram
+            </a>
+            <a href="">
+                <img src="Images/twitter.png" alt="">Twitter
+            </a>
+            <a href="">
+                <img src="Images/youtube.png" alt="">YouTube
+            </a>
+        </div>
+        <div class="text">Copyright &copy; 2023, Makanan.spot - All rights reserved</div>
+    </div>
+</body>
+<script>
+    function clicked(){
+        alert('You are currently on this page!')
+    }
+</script>
+</html>
