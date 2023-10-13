@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makanan.spot - A place for your cravings!</title>
+    <style>
+        body {
+            margin: 0px;
+            box-sizing: content-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgb(238, 235, 235);
+        }
+        /* HEADER */
+        .header {
+            overflow: hidden;
+            display: block;
+        }
+        .header > .logo {
+            float: left;
+            width: 25%;
+        }
+        .header > .logo > img {
+            padding: 10px;
+        }
+        .header > .info {
+            padding: 35px;
+            float: right;
+            overflow: hidden;
+            width: 70%;
+        }
+        .header > .info > div {
+            padding: 10px;
+            float: right;
+            text-align: center;
+        }
+        .header > .info > div > img {
+            margin-right: 5px;
+            width: 20px;
+        }
+        /* MENU */
+        .menu {
+            overflow: hidden;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            background-color: black;
+        }
+        .menu > a {
+            float: left;
+            width: 22%;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .menu > a > img {
+            width: 20px;
+            margin: 0px;
+        }
+        .menu > a:hover {
+            background-color: black;
+            color: white;
+            filter: invert(1);
+        }
+        /* CONTENT */
+        .content {
+            overflow: hidden;
+            display: block;
+        }
+        .content > .greetings {
+            text-align: center;
+            overflow: hidden;
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 30px;
+            border: solid;
+            border-radius: 10px;
+            background-color: rgb(37, 37, 37);
+            color: white;
+        }
+        /* .content > .greetings:hover {
+            background-color: rgb(170, 170, 170);
+            color: black;
+            border: solid 1px grey;
+        } */
+        .content > .greetings > .greet {
+            float: left;
+            width: 60%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        .content > .greetings > .greet > .greet1 {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .content > .greetings > .greet > .greet2 {
+            font-size: 18px;
+            text-align: center;
+        }
+        .content > .greetings > .day-night {
+            float: right;
+            width: 30%;
+        }
+        .content > .greetings > .day-night > img {
+            width: 200px;
+            text-align: center;
+        }
+        .content > .hot {
+            overflow: hidden;
+        }
+        .content > .hot > .hot-title {
+            font-size: 30px;
+            font-weight: bold;
+            margin-left: 30px;
+        }
+        .content > .hot > .hot-items {
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+        .content > .hot > .hot-items > div {
+            float: left;
+            width: 16.5%;
+            text-decoration: none;
+        }
+        .content > .hot > .hot-items > div > a:hover {
+            text-decoration: underline blue;
+        }
+        .content > .hot > .hot-items > div > a > img {
+            width: 200px;
+            border-radius: 5px;
+            text-decoration: none;
+            border: double 1px gray;
+        }
+        .content > .hot > .hot-items > div > a {
+            text-decoration: none;
+            color: blue;
+        }
+        .content > .hot > .hot-items > div > a > div {
+            color: black;
+            font-size: 18px;
+        }
+        .content > .hot > .hot-items > div > .star {
+            color: rgb(202, 177, 36);
+            font-size: 20px;
+        }
+        .content > .high {
+            overflow: hidden;
+        }
+        .content > .high > .high-title {
+            font-size: 30px;
+            font-weight: bold;
+            margin-left: 30px;
+        }
+        .content > .high > .high-items {
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+        .content > .high > .high-items > div {
+            float: left;
+            width: 16.5%;
+            text-decoration: none;
+        }
+        .content > .high > .high-items > div > a:hover {
+            text-decoration: underline black;
+        }
+        .content > .high > .high-items > div > a > img {
+            width: 200px;
+            border-radius: 5px;
+            border: solid 1px black;
+            text-decoration: none;
+        }
+        .content > .high > .high-items > div > a {
+            text-decoration: none;
+            color: blue;
+        }
+        .content > .high > .high-items > div > a > div {
+            color: black;
+            font-size: 18px;
+        }
+        .content > .high > .high-items > div > .star {
+            color: rgb(202, 177, 36);
+            font-size: 20px;
+        }
+        .content > .high > .high-items > div > #address {
+            visibility: hidden;
+        }
+        /* FOOTER */
+        .footer {
+            overflow: hidden;
+            display: block;
+            background-color: black;
+            color: white;
+        }
+        .footer > .icon-footer {
+            float: left;
+            margin-bottom: 10px;
+        }
+        .footer > .icon-footer > h3 {
+            padding-left: 20px;
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+        .footer > .icon-footer > a {
+            text-decoration: none;
+            padding: 20px;
+            color: white;
+        }
+        .footer > .icon-footer > a > img {
+            width: 20px;
+            margin-right: 5px;
+        }
+        .footer > .icon-footer > a:hover {
+            text-decoration: underline;
+        }
+        .footer > .text {
+            float: right;
+            padding: 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">
+            <img src="Images/Let_s_get_in_touch___1_-removebg-preview.png" alt="">
+        </div>
+        <div class="info">
+            <div class="hq">
+                <img src="Images/location.png" alt="">
+                Our HQ
+            </div>
+            <div class="email">
+                <img src="Images/email (1).png" alt="">
+                makanan.spot@business.com
+            </div>
+            <div class="phone">
+                <img src="Images/phone-call.png" alt="">
+                07-4112510 (HQ)
+            </div>
+        </div>
+    </div>
+    <!-- MENU -->
+    <div class="menu">
+        <a href="index.html" class="home">
+            <img src="Images/home_1946436.png" alt="">&emsp;Home
+        </a>
+        <a href="take-away.html" class="take-away" onclick="clicked()">
+            <img src="Images/take-away_6406675.png" alt="">&emsp;Take-away
+        </a>
+        <a href="" class="recipe">
+            <img src="Images/book_1764375.png" alt="">&emsp;Recipes
+        </a>
+        <a href="" class="support">
+            <img src="Images/support_3249904.png" alt="">&emsp;24/7 Customer Service
+        </a>
+    </div>
+    <!-- CONTENT -->
+    <div class="content">
+        <div class="greetings">
+            <div class="greet">
+                <div class="greet1">Good morning, Fayyadh!</div><br>
+                <div id="greet2">Ready to start your day with us?</div>
+            </div>
+            <div class="day-night">
+                <img src="Images/sun.png" style="margin-top: 10px;">
+            </div>
+        </div><br><br>
+        <div class="hot" style="overflow-x: auto; overflow-y: hidden; max-height: fit-content; white-space: nowrap; overflow: auto;">
+            <div class="hot-title">TRENDING CUISINE🔥</div>
+            <div class="hot-items">
+                <div class="item1">
+                    <a href="" style="text-decoration: none;">
+                        <img src="Images/roti-canai.jpeg" alt="">
+                        <div id="text1">ROTI CANAI</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&starf;</div><br>
+                    <a href="">Order Now! >></a>
+                </div>
+                <div class="item2">
+                    <a href="" style="text-decoration: none;">
+                        <img src="Images/kuih bangkit.jpeg" alt="">
+                        <div id="text2">KUIH BANGKIT</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&star;</div><br>
+                    <a href="">Order Now! >></a>
+                </div>
+                <div class="item3">
+                    <a href="" style="text-decoration: none;">
+                        <img src="Images/laksa-johor.jpeg" alt="">
+                        <div class="text3">LAKSA JOHOR</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&star;</div><br>
+                    <a href="">Order Now! >></a>
+                </div>
+                <div class="item4">
+                    <a href="" style="text-decoration: none;">
+                        <img src="Images/nasi_lemak.jpeg" alt="">
+                        <div class="text4">NASI LEMAK</div>
+                    <div class="star" style="color: rgb(202, 177, 36);">&starf;&starf;&starf;&starf;&star;</div><br>
+                    <a href="">Order Now! >></a>
+                </div>
+                <div class="item5">
+                    <a href="" style="text-decoration: none;">
+                        <img src="Images/nasi-goreng.jpg" alt="">
+                        <div class="text5">NASI GORENG</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&star;</div><br>
+                    <a href="">Order Now! >></a>
+                </div>
+               <div class="item6">
+                    <a href="" style="text-decoration: none;">
+                        <img src="Images/mi-goreng.jpg" alt="">
+                        <div class="text6">MI GORENG</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&star;</div><br>
+                    <a href="">Order Now! >></a>
+               </div>
+               <div class="item7">
+                <a href="" style="text-decoration: none;">
+                    <img src="Images/pizza.jpeg" alt="">
+                    <div class="text6">PIZZA</div>
+                </a>
+                <div class="star">&starf;&starf;&starf;&starf;&star;</div><br>
+                <a href="">Order Now! >></a>
+           </div>
+            </div>
+        </div><br><br>
+        <div class="high">
+            <div class="high-title">HIGH-RATED PLACES✨</div>
+            <div class="high-items">
+                <div class="restaurant1">
+                    <a href="">
+                        <img src="Images/restoran-1.jpeg" alt=""> 
+                        <div class="name1">法右达餐厅</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&starf;</div><br>
+                    <a href="">See details >></a>
+                    <br><br>
+                    <div id="address">
+                        12, Jalan Gangsa, <br>
+                        Taman Harmoni, <br>
+                        31900 Bukit Tinggi, <br>
+                        Johor
+                    </div>
+                </div>
+                <div class="restaurant2">
+                    <a href="">
+                        <img src="Images/restoran-2.jpeg" alt="">
+                        <div class="name2">D'SELERA</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&starf;</div><br>
+                    <a href="">See details >></a>
+                    <br><br>
+                    <div id="address">
+                        12, Jalan Gangsa, <br>
+                        Taman Harmoni, <br>
+                        31900 Bukit Tinggi, <br>
+                        Johor
+                    </div>
+                </div>
+                <div class="restaurant3">
+                    <a href="">
+                        <img src="Images/restoran-3.jpeg" alt="">
+                        <div class="name3">Lala's Kopitiam</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&starf;</div><br>
+                    <a href="">See details >></a>
+                    <br><br>
+                    <div id="address">
+                        12, Jalan Gangsa, <br>
+                        Taman Harmoni, <br>
+                        31900 Bukit Tinggi, <br>
+                        Johor
+                    </div>
+                </div>
+                <div class="restaurant4">
+                    <a href="">
+                        <img src="Images/restoran-4.jpeg" alt="">
+                        <div class="name4">Kafe Kenangan</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&starf;</div><br>
+                    <a href="">See details >></a>
+                    <br><br>
+                    <div id="address">
+                        12, Jalan Gangsa, <br>
+                        Taman Harmoni, <br>
+                        31900 Bukit Tinggi, <br>
+                        Johor
+                    </div>
+                </div>
+                <div class="restaurant5">
+                    <a href="">
+                        <img src="Images/restoran-5.jpeg" alt="">
+                        <div class="name5">帅哥‘s Food Truck</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&starf;</div><br>
+                    <a href="">See details >></a>
+                    <br><br>
+                    <div id="address">
+                        12, Jalan Gangsa, <br>
+                        Taman Harmoni, <br>
+                        31900 Bukit Tinggi, <br>
+                        Johor
+                    </div>
+                </div>
+                <div class="restaurant6">
+                    <a href="">
+                        <img src="Images/restoran-6.jpeg" alt="">
+                        <div class="name6">Medan Selera IKEA</div>
+                    </a>
+                    <div class="star">&starf;&starf;&starf;&starf;&starf;</div><br>
+                    <a href="">See details >></a>
+                    <br><br>
+                    <div id="address">
+                        12, Jalan Gangsa, <br>
+                        Taman Harmoni, <br>
+                        31900 Bukit Tinggi, <br>
+                        Johor
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+    <div class="footer">
+        <div class="icon-footer">
+            <h3>Check out our social medias too!</h3>
+            <a href="">
+                <img src="Images/instagram.png" alt="">Instagram
+            </a>
+            <a href="">
+                <img src="Images/twitter.png" alt="">Twitter
+            </a>
+            <a href="">
+                <img src="Images/youtube.png" alt="">YouTube
+            </a>
+        </div>
+        <div class="text">Copyright &copy; 2023, Makanan.spot - All rights reserved</div>
+    </div>
+</body>
+<!-- <script>
+    var sentences = [
+        'Ready to start your day with us?',
+        'Use our HALLOWEEN code for 30% off!',
+        'Many shops and food for you to choose on',
+        'Check out our RECIPES too!'
+    ];
+    var timerId = null
+
+    function nextSentences() {
+        var sentence = sentences.shift();
+        document.getElementById('greet2').textContent = sentences;
+
+        if (sentence.length == 0) {
+            window.clearInterval(timerId);
+        }
+    }
+
+    timerId = window.setInterval(nextSentences, 1000);
+</script> -->
+</html>

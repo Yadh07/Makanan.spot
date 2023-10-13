@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makanan.spot - A place for your cravings!</title>
+    <style>
+        body {
+            margin: 0px;
+            box-sizing: content-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgb(238, 235, 235);
+        }
+        /* HEADER */
+        .header {
+            overflow: hidden;
+            display: block;
+        }
+        .header > .logo {
+            float: left;
+            width: 25%;
+        }
+        .header > .logo > img {
+            padding: 10px;
+        }
+        .header > .info {
+            padding: 35px;
+            float: right;
+            overflow: hidden;
+            width: 70%;
+        }
+        .header > .info > div {
+            padding: 10px;
+            float: right;
+            text-align: center;
+        }
+        .header > .info > div > img {
+            margin-right: 5px;
+            width: 20px;
+        }
+        /* MENU */
+        .menu {
+            overflow: hidden;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            background-color: black;
+        }
+        .menu > a {
+            float: left;
+            width: 22%;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .menu > a > img {
+            width: 20px;
+            margin: 0px;
+        }
+        .menu > a:hover {
+            background-color: black;
+            color: white;
+            filter: invert(1);
+        }
+        /* CONTENT */
+        .content {
+            overflow: hidden;
+            display: block;
+            margin: 10px;
+        }
+        .content > .header-content {
+            overflow: hidden;
+            display: block;
+        }
+        .content > .header-content > .back {
+            width: 10%;
+            float: left;
+        }
+        .content > .header-content > .back > a > button {
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .content > .header-content > .marquee {
+            width: 90%;
+            float: right;
+        }
+        .content > .header-content > .marquee > marquee {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .content > .header-content > .marquee > marquee > span {
+            color: red;
+        }
+        .content > .logo {
+            width: 20%;
+            float: left;
+            text-align: center;
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+        .content > .logo > #logo-content {
+            margin-top: 5%;
+            margin-bottom: 50%;
+        }
+        .content > .logo > #logo-content > img {
+            width: 200px;
+        }
+        .content > .order-form {
+            width: 75%;
+            float: right;
+            overflow: hidden;
+        }
+        .content > .order-form > form {
+            float: right;
+            float: left;
+        }
+        .content > .order-form > form > .user-info > input {
+            padding: 10px;
+            border-style: double;
+            border-radius: 3px;
+        }
+        .content > .order-form > form > .payment {
+            overflow: hidden;
+        }
+        .content > .order-form > form > .payment > .payment-choice > div {
+            width: 16.5%;
+            float: left;
+        }
+        .content > .order-form > form > .payment > .payment-choice > div > img {
+            width: 70px;
+        }
+        .content > .order-form > form > .payment > .payment-choice > .mastercard > img  {
+            width: 40px;
+        }
+        .content > .order-form > form > .payment > .payment-choice > .grab-pay > img {
+            width: 50px;
+        }
+        .content > .order-form > form > .payment > .payment-choice > .tng > img {
+            width: 50px;
+        }
+        .content > .order-form > form > .payment > .payment-choice > .cash > img {
+            width: 50px;
+        }
+        .content > .order-form > form > .payment > .card-choice {
+            margin-top: 200px;
+        }
+        .content > .order-form > form > .payment > .card-form {
+            overflow: hidden;
+            display: block;
+        }
+        .content > .order-form > form > .card-form > #form > .cvv {
+            overflow: hidden;
+            display: block;
+        }
+        .content > .order-form > form > .card-form > #form > .cvv > .cvv1 , .cvv2 {
+            float: left;
+        }
+        .content > .order-form > form > .card-form > #form > .cvv > .cvv2 {
+            margin-left: 30px;
+        }
+        .content > .order-form > form > .card-form > #form > .cvv > div > input {
+            padding: 10px;
+            border-style: double;
+            border-radius: 3px;
+        }
+        .content > .order-form > form > .card-form > #form > input {
+            padding: 10px;
+            border-style: double;
+            border-radius: 3px;
+        }
+        .content > .order-form > form > input {
+            padding: 7px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border: none;
+            background-color: black;
+            color: white;
+            border-radius: 2px;
+        }
+        .content > .order-form > form > input:hover {
+            padding: 7px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: white;
+            color: black;
+            border-style: double;
+            border-radius: 2px;
+        }
+        /* FOOTER */
+        .footer {
+            overflow: hidden;
+            display: block;
+            background-color: black;
+            color: white;
+        }
+        .footer > .icon-footer {
+            float: left;
+            margin-bottom: 10px;
+        }
+        .footer > .icon-footer > h3 {
+            padding-left: 20px;
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+        .footer > .icon-footer > a {
+            text-decoration: none;
+            padding: 20px;
+            color: white;
+        }
+        .footer > .icon-footer > a > img {
+            width: 20px;
+            margin-right: 5px;
+        }
+        .footer > .icon-footer > a:hover {
+            text-decoration: underline;
+        }
+        .footer > .text {
+            float: right;
+            padding: 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">
+            <img src="Images/Let_s_get_in_touch___1_-removebg-preview.png" alt="">
+        </div>
+        <div class="info">
+            <div class="hq">
+                <img src="Images/location.png" alt="">
+                Our HQ
+            </div>
+            <div class="email">
+                <img src="Images/email (1).png" alt="">
+                makanan.spot@business.com
+            </div>
+            <div class="phone">
+                <img src="Images/phone-call.png" alt="">
+                07-4112510 (HQ)
+            </div>
+        </div>
+    </div>
+    <!-- MENU -->
+    <div class="menu">
+        <a href="index.html" class="home">
+            <img src="Images/home_1946436.png" alt="">&emsp;Home
+        </a>
+        <a href="take-away.html" class="take-away">
+            <img src="Images/take-away_6406675.png" alt="">&emsp;Take-away
+        </a>
+        <a href="" class="recipe">
+            <img src="Images/book_1764375.png" alt="">&emsp;Recipes
+        </a>
+        <a href="" class="support">
+            <img src="Images/support_3249904.png" alt="">&emsp;24/7 Customer Service
+        </a>
+    </div>
+    <!-- CONTENT -->
+    <div class="content">
+        <div class="header-content">
+            <div class="back">
+                <a href="index.html">
+                    <button> < BACK </button>
+                </a>
+            </div>
+            <div class="marquee">
+                <marquee behavior="" direction="">
+                    !NOTICE! - Makanan.spot's payment service page is under development. You may face some errors and bugs while browsing. <span>Do not click in your info as it is not stable yet.</span> Kindly leave your feedback in <a href="">24/7 Customer Service</a> section. Thank you for your participation!
+                </marquee>
+            </div>
+        </div>
+        <div class="logo">
+            <div id="logo-content">
+                <img src="Images/take-away_white.png" alt=""><br>
+                <h1>Ready to order?</h1>
+                <h4>Anytime, anywhere</h4>
+            </div>
+        </div><br>
+        <div class="order-form">
+            <form action="">
+                <div class="user-info">
+                    <h1>RECIPIENT INFORMATION</h1>
+                    Name: <br><input type="text" class="name" required><br>
+                    Address: <br><input type="text" class="address" required><br>
+                    Telephone Number: <br> <input tel="" class="telephone" required><br>
+                    Email (optional): <br><input type="email" class="email"><br>
+                </div><br><br>
+                <div class="payment">
+                    <h1>PAYMENT SEGMENT</h1>
+                    Payment method: <br>
+                    <div class="payment-choice">
+                        <div class="visa">
+                            <input type="radio" name="payment"><br><img src="Images/visa-logo-png-2013.png">
+                        </div>
+                        <div class="mastercard">
+                            <input type="radio" name="payment"><br><img src="Images/mastercard-26149.png">
+                        </div>
+                        <div class="grab-pay">
+                            <input type="radio" name="payment"><br><img src="Images/grabpay-seeklogo.com.png" style="margin: 0px;">
+                        </div>
+                        <div class="tng">
+                            <input type="radio" name="payment"><br><img src="Images/touch-n-go-ewallet-seeklogo.com.png">
+                        </div>
+                        <div class="shopee">
+                            <input type="radio" name="payment"><br><img src="Images/shopee-pay-seeklogo.com.png">
+                        </div>
+                        <div class="cash">
+                            <input type="radio" name="payment"><br><img src="Images/money.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-notice">
+                    <h4>If your payment is either Visa or Mastercard, fill this form. If not, proceed to <a href="#"><input type="submit" onclick="clickedNC()"></a></h4>
+                </div>
+                <div class="card-form">
+                    <div id="form">
+                        Bank name: <br><input type="text" name="" id=""><br>
+                        Name of cardholder: <br><input type="text" name="" id=""><br>
+                        Card number: <br><input type="tel" max="16"><br>
+                        <div class="cvv">
+                            <div class="cvv1">
+                                CVV: <br><input type="num" max="3">
+                            </div>
+                            <div class="cvv2">
+                                CVV2 (if available): <br><input type="number" max="3">
+                            </div>
+                        </div>
+                        Expiration Date: <br><input type="month" name="" id="">
+                    </div>
+                </div>
+                <br><br>
+                <input type="submit" onclick="clickedC()">
+            </form>
+        </div>
+    </div><br><br>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="icon-footer">
+            <h3>Check out our social medias too!</h3>
+            <a href="">
+                <img src="Images/instagram.png" alt="">Instagram
+            </a>
+            <a href="">
+                <img src="Images/twitter.png" alt="">Twitter
+            </a>
+            <a href="">
+                <img src="Images/youtube.png" alt="">YouTube
+            </a>
+        </div>
+        <div class="text">Copyright &copy; 2023, Makanan.spot - All rights reserved</div>
+    </div>
+</body>
+<script>
+    function clicked(){
+        alert('You are currently on this page!')
+    }
+    function clickedNC(){
+        alert('Your payment has succesfully submitted! A courier will be accepting your order. You will receive your food in no time!')
+    }
+    function clickedC(){
+        alert('Your payment has successfully submitted! Our service will reach your bank service as fast as possible. You will receive your food in no time!')
+    }
+</script>
+</html>
